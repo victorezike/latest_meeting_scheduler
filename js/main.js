@@ -23,11 +23,11 @@ $(document).ready(function(){
     
     
     
-    //function to hide and show
-    $("#submit").on('click', function(e) {
-        $('#stff').show();
-        $(this).hide();
-    });
+    // //function to hide and show
+    // $("#submit").on('click', function(e) {
+    //     $('#stff').show();
+    //     $(this).hide();
+    // });
 
 
     //STAFF
@@ -57,26 +57,24 @@ $(document).ready(function(){
     
         });
 
-        $('#tpc').show();
-        $(this).show();
+        // $('#tpc').show();
+        // $(this).show();
 
     }); 
        
-    $("#tpc").on('change', function(e) {
-    
-    var serializedData= $("#form_info").serialize();
-    console.log(serializedData);
-        $( function() {
-        $( "#datepicker" ).datepicker();
+    $("#topic").on('change', function(e) {
+        $('#datepicker').datepicker({
+            inline : true,
+            // altField : '#hiddenFieldID',
         });
 
-        $('#dte').show();
-        $(this).show();
+        // $('#dte').show();
+        // $(this).show();
 
     });
 
     //TOPIC
-    $("#dte").on('change', function(e) {
+    $("#datepicker").on('change', function(e) {
 
         var serializedData= $("#form_info").serialize();
         console.log(serializedData);
@@ -101,15 +99,15 @@ $(document).ready(function(){
         });
 
         //TIME
-        $('#tme').show();
-        $(this).show();
+        // $('#tme').show();
+        // $(this).show();
 
     });
 
-    $("#tme").on('change', function(e) {
-        $('#book_meeting').show();
-        $(this).show();
-    });
+    // $("#tme").on('change', function(e) {
+    //     // $('#book_meeting').show();
+    //     // $(this).show();
+    // });
 
 
      var request;
@@ -196,7 +194,7 @@ function  perforDBUpdate(custom_email, custom_name, amt, transaction_ref){
   request.done(function (response, textStatus, jqXHR){
       // Log a message to the console
        console.log(response);
-      alert(Your meeting has been booked);
+    //   alert(Your meeting has been booked);
       var resp = "<div class='alert alert-success'>" + response + "</div>"  
       $(".notification").html(resp);
 
@@ -205,7 +203,7 @@ function  perforDBUpdate(custom_email, custom_name, amt, transaction_ref){
   // Callback handler that will be called on failure
   request.fail(function (jqXHR, textStatus, errorThrown){
       // Log the error to the console      
-      alert(Your meeting has been booked);
+    //   alert(Your meeting has been booked);
       var resp = JSON.parse(jqXHR.responseText);
       console.log(resp);
   if (resp.name) {
