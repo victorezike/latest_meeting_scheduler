@@ -65,7 +65,7 @@ $(document).ready(function(){
     $("#topic").on('change', function(e) {
         $('#datepicker').datepicker({
             inline : true,
-            // altField : '#hiddenFieldID',
+            // altField : '#hiddenFieldID', fgrhj
         });
 
         // $('#dte').show();
